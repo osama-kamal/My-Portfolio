@@ -193,7 +193,7 @@ const ProjectDetails = () => {
                       ? "Let's discuss how we can work together on similar projects"
                       : 'لنتناقش حول كيفية العمل معًا على مشاريع مماثلة'}
                   </p>
-                  <Button variant="primary" size="lg" href="https://wa.me/201095836766" target="_blank">
+                  <Button variant="primary" size="lg" href="https://wa.me/201033928114" target="_blank">
                     {language === 'en' ? 'Get In Touch' : 'تواصل معي'}
                   </Button>
                 </Card.Body>

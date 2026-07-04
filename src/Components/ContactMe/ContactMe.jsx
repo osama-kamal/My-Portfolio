@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 import './ContactMe.css';
 import { useMode } from '../../Utils/Context/ModeContext';
@@ -15,7 +15,7 @@ const ContactMe = () => {
     subject: '',
     message: ''
   });
-  const [showAlert, setShowAlert] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // null | 'success' | 'error'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef(null);
   const formRef = useRef(null);
@@ -61,24 +61,30 @@ const ContactMe = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowAlert(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mdarywpz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formData),
       });
-      
-      // Hide alert after 5 seconds
-      setTimeout(() => setShowAlert(false), 5000);
-    }, 1500);
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitStatus(null), 6000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // بيانات ثنائية اللغة
@@ -144,9 +150,16 @@ const ContactMe = () => {
           <Col lg={8} className="mx-auto">
             <Card className={`contact-card ${mode}-card animate-on-scroll ${isRTL ? 'rtl-card' : ''}`}>
               <Card.Body className="p-4 p-md-5">
-                {showAlert && (
+                {submitStatus === 'success' && (
                   <Alert variant="success" className={`animate-alert ${isRTL ? 'text-right' : 'text-left'}`}>
                     {data.success}
+                  </Alert>
+                )}
+                {submitStatus === 'error' && (
+                  <Alert variant="danger" className={`animate-alert ${isRTL ? 'text-right' : 'text-left'}`}>
+                    {language === 'ar'
+                      ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.'
+                      : 'Something went wrong. Please try again.'}
                   </Alert>
                 )}
                 

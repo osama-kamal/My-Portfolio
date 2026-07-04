@@ -126,7 +126,7 @@ export default function Hero() {
 
                 {/* زرار الاتصال */}
                 <a
-                  href="https://wa.me/201095836766"
+                  href="https://wa.me/201033928114"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-outline-light hero-btn bg-black"
