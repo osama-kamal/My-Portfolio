@@ -1,0 +1,151 @@
+.skills-section {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* Dark and Light Mode Support */
+.skills-section.light-mode {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #2d3748;
+}
+
+.skills-section.dark-mode {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: #e2e8f0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.skills-section.light-mode .section-title {
+  color: #2d3748;
+}
+
+.skills-section.dark-mode .section-title {
+  color: #e2e8f0;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.skills-section.light-mode .title-underline {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.skills-section.dark-mode .title-underline {
+  background: linear-gradient(135deg, #63b3ed 0%, #805ad5 100%);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.light-mode .skills-card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .skills-card {
+  background: rgba(26, 32, 44, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #e2e8f0;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-5px);
+}
+
+.light-mode .skills-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .skills-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.skill-item {
+  margin-bottom: 20px;
+}
+
+.skill-progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.light-mode .skill-progress .progress-bar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+.dark-mode .skill-progress .progress-bar {
+  background: linear-gradient(135deg, #63b3ed 0%, #805ad5 100%);
+  border-radius: 4px;
+}
+
+.soft-skill-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.light-mode .soft-skill-item {
+  color: #2d3748;
+}
+
+.dark-mode .soft-skill-item {
+  color: #e2e8f0;
+}
+
+.light-mode .text-primary {
+  color: #667eea !important;
+}
+
+.dark-mode .text-primary {
+  color: #63b3ed !important;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .soft-skill-item {
+  direction: rtl;
+}
+
+[dir="rtl"] .soft-skill-item .me-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-card {
+    margin-bottom: 20px;
+  }
+}
