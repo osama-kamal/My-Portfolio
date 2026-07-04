@@ -3,7 +3,6 @@ import "./Hero.css";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
 import { useMode } from "../../Utils/Context/ModeContext";
 import personalImg from "../../assets/Personal.jpg";
-import cv from "../../assets/Osama-Kamal-Full Stack Developer.pdf";
 export default function Hero() {
   const { language } = useLanguage();
   const { mode } = useMode();
@@ -116,9 +115,9 @@ export default function Hero() {
               <div className="hero-buttons fade-up">
                 {/* زرار تحميل الـ CV */}
                 <a
-                  href={cv}
-                  download="Osama-Kamal-Full Stack Developer.pdf"
-                  className="btn btn-primary hero-btn"
+                  href="/cv.pdf"
+                  download="Osama_Kamal_CV.pdf"
+                  className="btn btn-primary hero btn"
                 >
                   <span>{texts[language].cv}</span>
                   <div className="btn-bg"></div>
