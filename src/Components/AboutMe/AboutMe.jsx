@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react
 import "./AboutMe.css";
 import { useMode } from "../../Utils/Context/ModeContext";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
-import personalImg from "../../assets/personal.jpg";
+import personalImg from "../../assets/Personal.jpg";
 
 const AboutMe = () => {
   const { mode } = useMode();

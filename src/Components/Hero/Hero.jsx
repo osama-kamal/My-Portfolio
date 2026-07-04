@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
 import { useMode } from "../../Utils/Context/ModeContext";
-import personalImg from "../../assets/personal.jpg";
+import personalImg from "../../assets/Personal.jpg";
 import cv from "../../assets/Osama-Kamal-Full Stack Developer.pdf";
 export default function Hero() {
   const { language } = useLanguage();
