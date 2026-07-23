@@ -78,12 +78,12 @@ const MySkills = () => {
         { name: "Client Communication", icon: "fas fa-comments" },
         { name: "Analytical Thinking", icon: "fas fa-brain" },
         { name: "Project Leadership", icon: "fas fa-crown" },
-        { name: "Agile Methodology", icon: "fas fa-sync-alt" }
+       
       ],
       languages: [
         { name: "Arabic", level: 100, proficiency: "(Native)", flag: "🇪🇬" },
         { name: "English", level: 70, proficiency: "(Intermediate)", flag: "🇬🇧" },
-        { name: "German", level: 30, proficiency: "(Basic)", flag: "🇩🇪" }
+        
       ]
     },
     ar: {
