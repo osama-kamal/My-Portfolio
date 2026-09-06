@@ -118,7 +118,6 @@ const MySkills = () => {
       languages: [
         { name: "العربية", level: 100, proficiency: "(اللغة الأم)", flag: "🇪🇬" },
         { name: "الإنجليزية", level: 70, proficiency: "(متوسط)", flag: "🇬🇧" },
-        { name: "الألمانية", level: 30, proficiency: "(مبتدئ)", flag: "🇩🇪" }
       ]
     }
   };
@@ -278,7 +277,7 @@ const MySkills = () => {
                   <Col md={3} className="mb-3">
                     <div className="stat-item">
                       <i className="fas fa-code stat-icon"></i>
-                      <h3 className="stat-number">12</h3>
+                      <h3 className="stat-number">10</h3>
                       <p className="stat-label">
                         {language === 'ar' ? 'تقنية متقنة' : 'Technologies Mastered'}
                       </p>
@@ -287,7 +286,7 @@ const MySkills = () => {
                   <Col md={3} className="mb-3">
                     <div className="stat-item">
                       <i className="fas fa-project-diagram stat-icon"></i>
-                      <h3 className="stat-number">50+</h3>
+                      <h3 className="stat-number">10</h3>
                       <p className="stat-label">
                         {language === 'ar' ? 'مشروع مكتمل' : 'Projects Completed'}
                       </p>
@@ -296,7 +295,7 @@ const MySkills = () => {
                   <Col md={3} className="mb-3">
                     <div className="stat-item">
                       <i className="fas fa-clock stat-icon"></i>
-                      <h3 className="stat-number">3+</h3>
+                      <h3 className="stat-number">2+</h3>
                       <p className="stat-label">
                         {language === 'ar' ? 'سنوات خبرة' : 'Years Experience'}
                       </p>
@@ -305,7 +304,7 @@ const MySkills = () => {
                   <Col md={3} className="mb-3">
                     <div className="stat-item">
                       <i className="fas fa-globe stat-icon"></i>
-                      <h3 className="stat-number">3</h3>
+                      <h3 className="stat-number">2</h3>
                       <p className="stat-label">
                         {language === 'ar' ? 'لغات متحدثة' : 'Languages Spoken'}
                       </p>

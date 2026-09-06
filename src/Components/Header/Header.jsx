@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { useMode } from "../../Utils/Context/ModeContext";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
-import { Sun, Moon, Globe, Menu, X } from "lucide-react";
+import { Sun, Moon, Globe } from "lucide-react";
 import "./Header.css";
 
 export default function Header() {
@@ -13,33 +12,24 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Scroll Effect
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => setIsMobileMenuOpen(false), [location]);
 
-  const translations = {
-    en: {
-      home: "Home",
-      about: "About",
-      projects: "Projects",
-      contact: "Contact",
-      brand: "MyPortfolio",
-    },
-    ar: {
-      home: "الرئيسية",
-      about: "عنّي",
-      projects: "المشاريع",
-      contact: "تواصل",
-      brand: "معرض أعمالي",
-    },
-  };
+  // lock scroll when drawer open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isMobileMenuOpen]);
 
+  const translations = {
+    en: { home: "Home", about: "About", projects: "Projects", contact: "Contact", brand: "MyPortfolio", cta: "Contact Us" },
+    ar: { home: "الرئيسية", about: "عنّي", projects: "المشاريع", contact: "تواصل", brand: "معرض أعمالي", cta: "تواصل معنا" },
+  };
   const t = translations[language];
   const isRTL = language === "ar";
 
@@ -49,122 +39,51 @@ export default function Header() {
     { key: "projects", path: "/projects" },
     { key: "contact", path: "/contact" },
   ];
-
   const isActiveLink = (path) => location.pathname === path;
 
   return (
     <>
-      <Navbar 
-        className={`custom-navbar ${mode} ${isScrolled ? "navbar-scrolled" : ""}`}
-        expand="lg"
-        fixed="top"
-        style={{ direction: isRTL ? "rtl" : "ltr" }}
-      >
-        <Container>
-          {/* Brand */}
-          <Navbar.Brand as={Link} to="/" className="custom-brand">
-            {t.brand}
-          </Navbar.Brand>
+      <header id="main-header" className={isScrolled ? "scrolled" : ""} style={{ direction: isRTL ? "rtl" : "ltr" }}>
+        <nav className="nav-inner container">
+          <Link to="/" className="nav-logo">
+            <span className="nav-logo-text">{t.brand}</span>
+          </Link>
 
-          {/* Desktop Nav */}
-          <div className="desktop-nav ms-auto d-flex align-items-center">
-            <Nav className="me-3">
-              {navItems.map((item) => (
-                <Nav.Link
-                  key={item.key}
-                  as={Link}
-                  to={item.path}
-                  className={`nav-link-custom ${mode} ${
-                    isActiveLink(item.path) ? "active" : ""
-                  }`}
-                >
-                  {t[item.key]}
-                </Nav.Link>
-              ))}
-            </Nav>
+          <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`} id="nav-links">
+            <li className="nav-close-wrap">
+              <button className="nav-close-btn" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu">
+                <i className="fas fa-times"></i>
+              </button>
+            </li>
 
-            {/* Toggles */}
-            <button
-              onClick={toggleMode}
-              className={`toggle-btn ${mode}`}
-              aria-label="Toggle theme"
-            >
-              {mode === "light" ? <Moon size={18} /> : <Sun size={18} />}
-            </button>
-            <button
-              onClick={toggleLanguage}
-              className={`toggle-btn ${mode}`}
-              aria-label="Toggle language"
-            >
-              <Globe size={18} />
-            </button>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button
-            className={`mobile-toggle toggle-btn ${mode}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            <Menu size={20} />
-          </button>
-        </Container>
-      </Navbar>
-
-      {/* Mobile Menu */}
-      <div
-        className={`mobile-menu ${mode} ${isMobileMenuOpen ? "open" : ""}`}
-        style={{ direction: isRTL ? "rtl" : "ltr" }}
-      >
-        <div className="mobile-menu-content">
-          <button
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`mobile-close-btn toggle-btn ${mode}`}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
-
-          <nav>
             {navItems.map((item) => (
-              <Link
-                key={item.key}
-                to={item.path}
-                className={`mobile-nav-link ${mode} ${
-                  isActiveLink(item.path) ? "active" : ""
-                }`}
-              >
-                {t[item.key]}
-              </Link>
+              <li key={item.key}>
+                <Link to={item.path} className={`nav-link ${isActiveLink(item.path) ? "active" : ""}`}>
+                  {t[item.key]}
+                </Link>
+              </li>
             ))}
-          </nav>
 
-          <div className="mobile-toggles">
-            <button
-              onClick={toggleMode}
-              className={`toggle-btn ${mode}`}
-              aria-label="Toggle theme"
-            >
-              {mode === "light" ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
-            <button
-              onClick={toggleLanguage}
-              className={`toggle-btn ${mode}`}
-              aria-label="Toggle language"
-            >
-              <Globe size={20} />
-            </button>
-          </div>
-        </div>
-      </div>
+            <li className="nav-actions">
+              <Link to="/contact" className="nav-cta">
+                <i className="fas fa-paper-plane"></i>
+                {t.cta}
+              </Link>
+              <button onClick={toggleMode} className="nav-icon-btn" aria-label="Toggle theme">
+                {mode === "light" ? <Moon size={14} /> : <Sun size={14} />}
+              </button>
+              <button onClick={toggleLanguage} className="nav-icon-btn" aria-label="Toggle language">
+                <Globe size={14} />
+              </button>
+            </li>
+          </ul>
 
-      {/* Backdrop */}
-      {isMobileMenuOpen && (
-        <div
-          className="mobile-backdrop"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+          <button className={`menu-toggle ${isMobileMenuOpen ? "open" : ""}`} id="menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </header>
+      <div className={`nav-overlay ${isMobileMenuOpen ? "active" : ""}`} id="nav-overlay" onClick={() => setIsMobileMenuOpen(false)}></div>
     </>
   );
 }

@@ -11,12 +11,14 @@ export const ModeProvider = ({ children }) => {
   // الحالة الأساسية: Light Mode
   const [mode, setMode] = useState("dark");
 
-  // عند التحميل، لو فيه تفضيل محفوظ في localStorage نستخدمه
+  // عند التحميل، لو فيه تفضيل محفوظ نستخدمه - غير كده Default = dark
   useEffect(() => {
     const savedMode = localStorage.getItem("theme");
-    if (savedMode) {
-      setMode(savedMode);
-      document.body.setAttribute("data-theme", savedMode);
+    const initialMode = savedMode || "dark";
+    setMode(initialMode);
+    document.body.setAttribute("data-theme", initialMode);
+    if (!savedMode) {
+      localStorage.setItem("theme", "dark");
     }
   }, []);
 

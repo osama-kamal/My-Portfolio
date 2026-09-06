@@ -1,179 +1,88 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
 import { useMode } from "../../Utils/Context/ModeContext";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer() {
-  const { mode } = useMode();
   const { language } = useLanguage();
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    const footerElement = document.getElementById("footer");
-    if (footerElement) {
-      observer.observe(footerElement);
-    }
-
-    return () => {
-      if (footerElement) {
-        observer.unobserve(footerElement);
-      }
-    };
-  }, []);
-
-  // الترجمات للغتين
   const translations = {
     en: {
-      title: "Osama Kamal",
-      subtitle: "MERN Stack Developer",
-      connect: "Let's Connect",
-      copyright: `© ${new Date().getFullYear()} Osama Kamal. All Rights Reserved`,
-      privacy: "Privacy Policy",
-      terms: "Terms of Service",
-      movingText: "Osama Kamal - MERN Stack Developer"
+      tagline: "Crafting premium digital systems",
+      tagline2: "for modern businesses and enterprises.",
+      quick: "Quick Links",
+      solutions: "Solutions",
+      copyright: `© ${new Date().getFullYear()} Osama Kamal. All rights reserved.`,
+      built: "Built with",
+      by: "by Osama",
     },
     ar: {
-      title: "اسامه",
-      subtitle: "مطور MERN Stack",
-      connect: "لنتواصل",
-      copyright: `© ${new Date().getFullYear()} اسامه كمال. جميع الحقوق محفوظة`,
-      privacy: "سياسة الخصوصية",
-      terms: "شروط الخدمة",
-      movingText: "اسامه كمال - مطور MERN Stack"
-    }
+      tagline: "نصنع أنظمة رقمية متميزة",
+      tagline2: "للشركات والمؤسسات الحديثة.",
+      quick: "روابط سريعة",
+      solutions: "الحلول",
+      copyright: `© ${new Date().getFullYear()} أسامة كمال. جميع الحقوق محفوظة.`,
+      built: "صُنع بـ",
+      by: "بواسطة أسامة",
+    },
   };
-
   const t = translations[language];
 
-  const socialLinks = [
-    {
-      href: "https://github.com/osama-kamal",
-      icon: "bi bi-github",
-      label: "GitHub",
-      color: mode === "dark" ? "#f0f0f0" : "#333",
-    },
-    {
-      href: "https://www.linkedin.com/in/osama-hamroush/",
-      icon: "bi bi-linkedin",
-      label: "LinkedIn",
-      color: mode === "dark" ? "#80c8ff" : "#0077B5",
-    },
-    {
-      href: "mailto:osamahamroush9@gmail.com",
-      icon: "bi bi-envelope-fill",
-      label: "Email",
-      color: mode === "dark" ? "#ff8a80" : "#EA4335",
-    },
-    {
-      href: "https://x.com/HamroushOs53067?s=09",
-      icon: "bi bi-twitter-x",
-      label: "Twitter",
-      color: mode === "dark" ? "#80d4ff" : "#1DA1F2",
-    },
-  ];
-
   return (
-    <>
-      {/* Moving Text Bar */}
-      <div className={`moving-text-bar ${mode}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
-        <div className="moving-text">
-          <span>{t.movingText}</span>
-          <span>{t.movingText}</span>
-          <span>{t.movingText}</span>
-        </div>
-      </div>
-
-      <footer
-        id="footer"
-        className={`footer-enhanced ${mode} ${isVisible ? "footer-visible" : ""}`}
-        dir={language === 'ar' ? 'rtl' : 'ltr'}
-      >
-        {/* Animated Background Elements */}
-        <div className="footer-bg-animation">
-          <div className="floating-circle circle-1"></div>
-          <div className="floating-circle circle-2"></div>
-          <div className="floating-circle circle-3"></div>
-        </div>
-
-        <Container className="footer-content">
-          {/* Main Footer Content */}
-          <Row className="align-items-center mb-4">
-            {/* Left Side - Brand */}
-            <Col md={6} className={`text-center ${language === 'ar' ? 'text-md-end' : 'text-md-start'} mb-3 mb-md-0`}>
-              <div className="brand-section">
-                <h3 className="brand-title">
-                  <span className="gradient-text">{t.title}</span>
-                </h3>
-                <p className="brand-subtitle">{t.subtitle}</p>
-                <div className="skills-tags">
-                  <span className="skill-tag">React</span>
-                  <span className="skill-tag">Node.js</span>
-                  <span className="skill-tag">MongoDB</span>
-                  <span className="skill-tag">Express</span>
-                </div>
-              </div>
-            </Col>
-
-            {/* Right Side - Social Links */}
-            <Col md={6} className={`text-center ${language === 'ar' ? 'text-md-start' : 'text-md-end'}`}>
-              <div className="social-section">
-                <h5 className="social-title">{t.connect}</h5>
-                <div className="social-links">
-                  {socialLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="social-link"
-                      style={{
-                        "--hover-color": link.color,
-                        "--delay": `${index * 0.1}s`,
-                      }}
-                      aria-label={link.label}
-                    >
-                      <i className={link.icon}></i>
-                      <span className="social-tooltip">{link.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </Col>
-          </Row>
-
-          {/* Divider */}
-          <div className="footer-divider">
-            <div className="divider-line"></div>
+    <footer>
+      <div className="container">
+        <div className="footer-top">
+          <div className="footer-brand">
+            <a href="#" className="footer-logo" style={{fontWeight:900, fontSize:'1.5rem', color:'var(--white)', textDecoration:'none', fontFamily:'Tajawal'}}>
+              MyPortfolio
+            </a>
+            <p className="footer-tagline">{t.tagline}<br />{t.tagline2}</p>
+            <div className="social-links">
+              <a href="https://github.com/osama-kamal" target="_blank" rel="noopener" aria-label="GitHub"><i className="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/osama-hamroush/" target="_blank" rel="noopener" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+              <a href="mailto:osamahamroush9@gmail.com" aria-label="Email"><i className="fas fa-envelope"></i></a>
+              <a href="https://wa.me/201033928114" target="_blank" rel="noopener" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></a>
+            </div>
           </div>
 
-          {/* Bottom Section */}
-          <Row className="footer-bottom">
-            <Col md={6} className={`text-center ${language === 'ar' ? 'text-md-end' : 'text-md-start'}`}>
-              <p className="copyright">
-                {t.copyright}
-              </p>
-            </Col>
-            <Col md={6} className={`text-center ${language === 'ar' ? 'text-md-start' : 'text-md-end'}`}>
-              <div className="footer-links">
-                <a href="#privacy" className="footer-link">
-                  {t.privacy}
-                </a>
-                <a href="#terms" className="footer-link">
-                  {t.terms}
-                </a>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </footer>
-    </>
+          <div className="footer-col">
+            <h4 className="footer-col-title">{t.quick}</h4>
+            <ul className="footer-links">
+              <li><Link to="/"><i className="fas fa-chevron-right"></i> Home</Link></li>
+              <li><Link to="/about"><i className="fas fa-chevron-right"></i> About</Link></li>
+              <li><Link to="/projects"><i className="fas fa-chevron-right"></i> Projects</Link></li>
+              <li><Link to="/contact"><i className="fas fa-chevron-right"></i> Contact</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4 className="footer-col-title">{t.solutions}</h4>
+            <ul className="footer-links">
+              <li><a href="#"><i className="fas fa-chevron-right"></i> MERN Stack</a></li>
+              <li><a href="#"><i className="fas fa-chevron-right"></i> SaaS Platforms</a></li>
+              <li><a href="#"><i className="fas fa-chevron-right"></i> E-Commerce</a></li>
+              <li><a href="#"><i className="fas fa-chevron-right"></i> Management Systems</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4 className="footer-col-title">Contact</h4>
+            <ul className="footer-links footer-contact">
+              <li><a href="mailto:osamahamroush9@gmail.com"><i className="fas fa-envelope"></i> osamahamroush9@gmail.com</a></li>
+              <li><a href="https://wa.me/201033928114" target="_blank" rel="noopener"><i className="fab fa-whatsapp"></i> +20 103 392 8114</a></li>
+              <li><a href="#"><i className="fas fa-map-marker-alt"></i> Cairo, Egypt</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>{t.copyright}</span>
+          <span className="footer-bottom-right">
+            {t.built} <i className="fas fa-heart" style={{color:'var(--primary)', fontSize:'0.75rem'}}></i> {t.by}
+          </span>
+        </div>
+      </div>
+    </footer>
   );
 }

@@ -40,15 +40,15 @@ const AboutMe = () => {
       education: "Education",
       contactInfo: {
         email: "osamahamroush9@gmail.com",
-        location: "Elbehaira, Egypt",
+        location: "Cairo, Egypt",
         phone: "+201033928114",
       },
       bio: "My name is Osama Kamal, a passionate software developer focused on building smart and integrated tech solutions. I am currently studying at the Faculty of Computer Science – Menoufia National University, specializing in Internet of Things (IoT) and Big Data Analysis. I specialize in developing modern web applications using the MERN Stack (MongoDB, Express.js, React.js, Node.js), with a particular interest in IoT projects that connect software with hardware, as well as database management and data analysis.",
       educationDetails: {
         degree: "Faculty of Computer Science",
         university: "Menoufia National University",
-        period: "2022 – present",
-        location: "Behera, Egypt",
+        period: "2022 – 2026",
+        location: "Cairo, Egypt",
         description:
           "Studying Computer Science with a focus on IoT and Big Data Analysis, I'm gaining practical skills in web development, smart systems integration, and data-driven solution design.",
       },
@@ -72,15 +72,15 @@ const AboutMe = () => {
       education: "التعليم",
       contactInfo: {
         email: "osamahamroush9@gmail.com",
-        location: "البحيرة، مصر",
+        location: "القاهره، مصر",
         phone: "+201033928114",
       },
-      bio: "اسمي يوسف حسن، مطور برمجيات شغوف أركز على بناء حلول تكنولوجية ذكية ومتكاملة. أدرس حاليًا في كلية علوم الحاسب - الجامعة الوطنية بالمنوفية، متخصص في إنترنت الأشياء (IoT) وتحليل البيانات الضخمة. أتخصص في تطوير تطبيقات الويب الحديثة باستخدام MERN Stack (MongoDB, Express.js, React.js, Node.js)، مع اهتمام خاص بمشاريع إنترنت الأشياء التي تربط البرامج بالأجهزة، بالإضافة إلى إدارة قواعد البيانات وتحليل البيانات.",
+      bio: "اسمي أسامة كمال، مطور برمجيات شغوف أركز على بناء حلول تكنولوجية ذكية ومتكاملة. أدرس حاليًا في كلية علوم الحاسب - الجامعة الوطنية بالمنوفية، متخصص في إنترنت الأشياء (IoT) وتحليل البيانات الضخمة. أتخصص في تطوير تطبيقات الويب الحديثة باستخدام MERN Stack (MongoDB, Express.js, React.js, Node.js)، مع اهتمام خاص بمشاريع إنترنت الأشياء التي تربط البرامج بالأجهزة، بالإضافة إلى إدارة قواعد البيانات وتحليل البيانات.",
       educationDetails: {
         degree: "كلية علوم الحاسب",
         university: "الجامعة الوطنية بالمنوفية",
-        period: "2022 – حتى الآن",
-        location: "البحيره، مصر",
+        period: "2022 – 2026",
+        location: "القاهره، مصر",
         description:
           "أدرس علوم الحاسب مع التركيز على إنترنت الأشياء وتحليل البيانات الضخمة، وأكتسب مهارات عملية في تطوير الويب، وتكامل الأنظمة الذكية، وتصميم الحلول القائمة على البيانات.",
       },

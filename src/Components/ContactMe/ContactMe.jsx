@@ -100,7 +100,7 @@ const ContactMe = () => {
       sending: "Sending...",
       success: "Your message has been sent successfully!",
       contactInfo: "Contact Info",
-      location: "Elbehaira, Egypt",
+      location: "Cairo, Egypt",
       phone: "+201033928114",
       emailAddress: "osamahamroush9@gmail.com"
     },
