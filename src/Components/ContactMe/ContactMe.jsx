@@ -262,21 +262,21 @@ const ContactMe = () => {
   </Col>
 
   <Col md={4} className="text-center mb-4">
-    <div className={`contact-info-item animate-on-scroll ${isRTL ? "rtl-info" : ""}`}>
+    <a href="tel:+201033928114" className={`contact-info-item animate-on-scroll ${isRTL ? "rtl-info" : ""}`} style={{textDecoration:'none', color:'inherit', display:'block'}}>
       <div className="icon-wrapper">
         <FaPhone size={28} />
       </div>
       <h5 dir="ltr">{data.phone}</h5>
-    </div>
+    </a>
   </Col>
 
   <Col md={4} className="text-center mb-4">
-    <div className={`contact-info-item animate-on-scroll ${isRTL ? "rtl-info" : ""}`}>
+    <a href="mailto:osamahamroush9@gmail.com" className={`contact-info-item animate-on-scroll ${isRTL ? "rtl-info" : ""}`} style={{textDecoration:'none', color:'inherit', display:'block'}}>
       <div className="icon-wrapper">
         <FaEnvelope size={28} />
       </div>
       <h5 dir="ltr">{data.emailAddress}</h5>
-    </div>
+    </a>
   </Col>
 </Row>
       </Container>
