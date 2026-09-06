@@ -69,7 +69,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">Contact</h4>
             <ul className="footer-links footer-contact">
-              <li><a href="mailto:osamahamroush9@gmail.com"><i className="fas fa-envelope"></i> osamahamroush9@gmail.com</a></li>
+              <li><a href="mailto:osamahamroush9@gmail.com" onClick={(e)=>{e.preventDefault(); navigator.clipboard.writeText('osamahamroush9@gmail.com'); window.location.href='mailto:osamahamroush9@gmail.com'; window.open('https://mail.google.com/mail/?view=cm&fs=1&to=osamahamroush9@gmail.com','_blank');}}><i className="fas fa-envelope"></i> osamahamroush9@gmail.com</a></li>
               <li><a href="https://wa.me/201033928114" target="_blank" rel="noopener"><i className="fab fa-whatsapp"></i> +20 103 392 8114</a></li>
               <li><a href="#"><i className="fas fa-map-marker-alt"></i> Cairo, Egypt</a></li>
             </ul>

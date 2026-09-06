@@ -123,6 +123,19 @@ const ContactMe = () => {
 
   const data = contactData[language];
 
+  const [copied, setCopied] = useState(false);
+  const handleEmailClick = async (e) => {
+    e.preventDefault();
+    try { await navigator.clipboard.writeText(data.emailAddress); } catch {}
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+    // try mailto + gmail fallback
+    window.location.href = `mailto:${data.emailAddress}`;
+    setTimeout(() => {
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${data.emailAddress}`, '_blank');
+    }, 300);
+  };
+
   return (
     <section 
       id="contact" 
@@ -271,11 +284,12 @@ const ContactMe = () => {
   </Col>
 
   <Col md={4} className="text-center mb-4">
-    <a href="mailto:osamahamroush9@gmail.com" className={`contact-info-item animate-on-scroll ${isRTL ? "rtl-info" : ""}`} style={{textDecoration:'none', color:'inherit', display:'block'}}>
+    <a href={`mailto:${data.emailAddress}`} onClick={handleEmailClick} className={`contact-info-item animate-on-scroll ${isRTL ? "rtl-info" : ""}`} style={{textDecoration:'none', color:'inherit', display:'block', cursor:'pointer', position:'relative'}}>
       <div className="icon-wrapper">
         <FaEnvelope size={28} />
       </div>
       <h5 dir="ltr">{data.emailAddress}</h5>
+      {copied && <small style={{color:'var(--primary)', position:'absolute', left:'50%', transform:'translateX(-50%)', bottom:'-18px', fontSize:'0.75rem', background:'var(--card-bg)', padding:'2px 8px', borderRadius:'20px', border:'1px solid var(--glass-border)'}}>{language === 'ar' ? 'تم النسخ ✓' : 'Copied ✓'} • {language === 'ar' ? 'سيفتح Gmail' : 'Opening Gmail'}</small>}
     </a>
   </Col>
 </Row>
