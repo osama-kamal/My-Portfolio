@@ -43,7 +43,7 @@ const AboutMe = () => {
         location: "Cairo, Egypt",
         phone: "+201033928114",
       },
-      bio: "My name is Osama Kamal, a passionate software developer focused on building smart and integrated tech solutions. I graduated in 2026 from the Faculty of Computer Science – Menoufia National University, specializing in Internet of Things (IoT) and Big Data Analysis. I specialize in developing modern web applications using the MERN Stack (MongoDB, Express.js, React.js, Node.js), with a particular interest in IoT projects that connect software with hardware, as well as database management and data analysis.",
+      bio: "I'm Osama Kamal, a software developer and 2026 Computer Science graduate of Menoufia National University, where I specialized in Internet of Things (IoT) and Big Data Analysis. I build full-stack web applications with the MERN stack. My recent work includes a dental clinic app, a multi-tenant e-commerce platform and a pharmacy management system, each with a live demo and honest notes on what works and what doesn't.",
       educationDetails: {
         degree: "Faculty of Computer Science",
         university: "Menoufia National University",
@@ -75,7 +75,7 @@ const AboutMe = () => {
         location: "القاهره، مصر",
         phone: "+201033928114",
       },
-      bio: "اسمي أسامة كمال، مطور برمجيات شغوف أركز على بناء حلول تكنولوجية ذكية ومتكاملة. تخرجت عام 2026 من كلية علوم الحاسب - جامعة المنوفية الأهلية، متخصص في إنترنت الأشياء (IoT) وتحليل البيانات الضخمة. أتخصص في تطوير تطبيقات الويب الحديثة باستخدام MERN Stack (MongoDB, Express.js, React.js, Node.js)، مع اهتمام خاص بمشاريع إنترنت الأشياء التي تربط البرامج بالأجهزة، بالإضافة إلى إدارة قواعد البيانات وتحليل البيانات.",
+      bio: "أنا أسامة كمال، مطور برمجيات وخريج علوم الحاسب عام 2026 من جامعة المنوفية الأهلية، تخصصت في إنترنت الأشياء (IoT) وتحليل البيانات الضخمة. أبني تطبيقات ويب متكاملة باستخدام MERN Stack. من أعمالي الأخيرة تطبيق لإدارة عيادة أسنان، ومنصة تجارة إلكترونية متعددة المتاجر، ونظام إدارة صيدلية، ولكل منها عرض حي وملاحظات صريحة عما يعمل وما لا يعمل.",
       educationDetails: {
         degree: "كلية علوم الحاسب",
         university: "جامعة المنوفية الأهلية",
