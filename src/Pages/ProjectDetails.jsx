@@ -154,7 +154,7 @@ const ProjectDetails = () => {
                 <Card.Body className="p-4">
                   <h4 className="mb-4">
                     <i className="fas fa-chart-line me-2"></i>
-                    {language === 'en' ? 'Impact' : 'التأثير'}
+                    {language === 'en' ? 'Status & Limitations' : 'الحالة والقيود'}
                   </h4>
                   <ul>
                     {project.impact.map((item, index) => (
