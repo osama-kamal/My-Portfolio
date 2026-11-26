@@ -95,30 +95,56 @@
   width: 20px;
 }
 
-.social-links {
+.about-social-links {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.social-links a {
+.about-social-links a {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: var(--white);
-  color: white;
+  background: rgba(var(--primary-rgb), 0.12);
+  color: var(--primary);
+  border: 1.5px solid rgba(var(--primary-rgb), 0.55);
   text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid var(--white);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s ease,
+    color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation: aboutSocialPulse 2.4s ease-out 1.2s 2;
 }
 
-.social-links a:hover {
-  transform: translateY(-2px);
+.about-social-links a svg {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.about-social-links a:hover,
+.about-social-links a:focus-visible {
+  transform: translateY(-4px) scale(1.08);
   background: var(--primary);
   border-color: var(--primary);
+  color: #111116;
+  box-shadow: 0 8px 22px rgba(var(--primary-rgb), 0.45);
+  outline: none;
+}
+
+.about-social-links a:hover svg,
+.about-social-links a:focus-visible svg {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+@keyframes aboutSocialPulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.45); }
+  100% { box-shadow: 0 0 0 14px rgba(var(--primary-rgb), 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-social-links a,
+  .about-social-links a svg { transition: none; animation: none; }
 }
 
 .bio-card {
@@ -297,7 +323,7 @@
 
 [dir="rtl"] .edu-header { text-align: right; }
 [dir="rtl"] .contact-info p { justify-content: flex-end; }
-[dir="rtl"] .social-links { direction: ltr; }
+[dir="rtl"] .about-social-links { direction: ltr; }
 
 .certifications-card h5 {
   font-size: 1rem;

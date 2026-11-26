@@ -151,11 +151,12 @@ const AboutMe = () => {
                   </p>
                 </div>
 
-                <div className="social-links mt-4">
+                <div className="about-social-links mt-4">
                   <a
                     href={`https://github.com/osama-kamal`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="GitHub"
                   >
                     <FaGithub size={22} />
                   </a>
@@ -163,6 +164,7 @@ const AboutMe = () => {
                     href={`https://www.linkedin.com/in/osama-hamroush/`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="LinkedIn"
                   >
                     <FaLinkedin size={22} />
                   </a>
