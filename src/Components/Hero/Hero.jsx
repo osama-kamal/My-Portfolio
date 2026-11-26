@@ -14,11 +14,11 @@ export default function Hero() {
   const texts = {
     en: {
       eyebrow: "Osama Kamal — MERN Stack Developer",
-      title1: "We Build",
-      title2: "Premium Digital",
-      title3: "Experiences",
-      desc: "Custom web platforms, enterprise systems, and modern SaaS products crafted with precision and passion for forward-thinking businesses.",
-      cta1: "Explore Our Work",
+      title1: "I Build",
+      title2: "Practical Web",
+      title3: "Applications",
+      desc: "Full-stack web apps and management systems built with the MERN stack, with live demos and honest notes on what works.",
+      cta1: "Explore My Work",
       cta2: "View My Work",
       name: "Osama Kamal",
       role: "MERN Stack Developer",
@@ -28,10 +28,10 @@ export default function Hero() {
     },
     ar: {
       eyebrow: "أسامة كمال — مطور MERN",
-      title1: "نبني",
-      title2: "تجارب رقمية",
-      title3: "متميزة",
-      desc: "منصات ويب مخصصة وأنظمة مؤسسية ومنتجات SaaS حديثة مصنوعة بدقة وشغف للأعمال الطموحة.",
+      title1: "أبني",
+      title2: "تطبيقات ويب",
+      title3: "عملية",
+      desc: "تطبيقات ويب متكاملة وأنظمة إدارة باستخدام MERN Stack، مع عروض حية وملاحظات صريحة عما يعمل.",
       cta1: "استكشف أعمالي",
       cta2: "عرض أعمالي",
       name: "أسامة كمال",
@@ -81,7 +81,7 @@ export default function Hero() {
 
           <div className="pf-stats-row">
             <div className="pf-stat">
-              <strong>10</strong><span>{language === "en" ? "Projects" : "مشروع"}</span>
+              <strong>3</strong><span>{language === "en" ? "Live Demos" : "عروض حية"}</span>
             </div>
             <div className="pf-stat-divider"></div>
             <div className="pf-stat">
@@ -98,7 +98,7 @@ export default function Hero() {
             <img src={personalImg} alt="Osama Kamal" className="pf-creator-img" />
             <div className="pf-creator-text">
               <strong>{language === "en" ? "Built by Osama Kamal" : "تنفيذ أسامة كمال"}</strong>
-              <span>{language === "en" ? "MERN Stack Developer • Menoufia University" : "مطور MERN • الجامعة الوطنية بالمنوفية"}</span>
+              <span>{language === "en" ? "MERN Stack Developer • Menoufia University" : "مطور MERN • جامعة المنوفية الأهلية"}</span>
             </div>
           </div>
         </div>
