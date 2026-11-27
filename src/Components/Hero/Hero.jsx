@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
 import { useMode } from "../../Utils/Context/ModeContext";
-import orcaHeroImg from "../../assets/orca-hero.png";
+import orcaHeroImg from "../../assets/orca-hero.jpg";
 import personalImg from "../../assets/Personal.jpg";
 
 export default function Hero() {
