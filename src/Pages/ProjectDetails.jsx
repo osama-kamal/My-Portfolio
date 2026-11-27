@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Button, Card, Carousel, Badge } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useMode } from '../Utils/Context/ModeContext';
@@ -13,6 +13,7 @@ const ProjectDetails = () => {
   const navigate     = useNavigate();
   const [project, setProject]         = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const selectedProject = projectsData[language].projects.find(p => p.id === id || p.slug === id);
@@ -26,6 +27,14 @@ const ProjectDetails = () => {
 
     return () => clearTimeout(timer);
   }, [id, language]);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const started = v.play();
+    if (started && started.catch) started.catch(() => {});
+  }, [project]);
 
   if (!project) {
     return (
@@ -98,6 +107,7 @@ const ProjectDetails = () => {
                   {projectsData[language].videoTitle}
                 </h2>
                 <video
+                  ref={videoRef}
                   className="project-video animate-on-scroll"
                   src={project.video}
                   poster={project.images && project.images[0]}
