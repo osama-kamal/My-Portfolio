@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayouts from "./Layouts/MainLayouts";
 import Home from "./Pages/Home";
 import AboutMe from "./Components/AboutMe/AboutMe";
@@ -20,6 +20,9 @@ export default function App() {
           <Route path="/contact" element={<ContactMe />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
+          {/* Any other path (e.g. a mistyped or cached link) lands on the home page
+              instead of rendering an empty layout. */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
