@@ -13,7 +13,7 @@ const Projects = () => {
 
   const data = projectsData[language];
 
-  const handleProjectDetails = (projectId) => navigate(`/project/${projectId}`);
+  const handleProjectDetails = (project) => navigate(`/projects/${project.slug || project.id}`);
 
   return (
     <section id="portfolio" className="pf-section">
@@ -31,7 +31,7 @@ const Projects = () => {
               <div className="pf-card-img">
                 <img src={project.image} alt={project.title} loading="lazy" />
                 <div className="pf-card-hover">
-                  <a onClick={() => handleProjectDetails(project.id)} className="pf-hover-btn primary" style={{cursor:'pointer'}}>
+                  <a onClick={() => handleProjectDetails(project)} className="pf-hover-btn primary" style={{cursor:'pointer'}}>
                     <i className="fas fa-eye"></i> {language === 'en' ? 'View Details' : 'عرض التفاصيل'}
                   </a>
                   {project.demoLink ? (
@@ -50,7 +50,7 @@ const Projects = () => {
               <div className="pf-card-body">
                 <h3>{project.shortTitle}</h3>
                 <p>{project.shortDescription}</p>
-                <a onClick={() => handleProjectDetails(project.id)} className="pf-card-link" style={{cursor:'pointer'}}>
+                <a onClick={() => handleProjectDetails(project)} className="pf-card-link" style={{cursor:'pointer'}}>
                   {data.moreDetails} <i className="fas fa-arrow-right"></i>
                 </a>
               </div>

@@ -393,3 +393,36 @@
   .carousel-image-container img { max-height: 400px; }
   .tech-badge { padding: 6px 12px; font-size: 0.78rem; }
 }
+
+/* ── Demo video, hosting note and honest notes ───────────────── */
+.project-video-row { margin-top: 2.2rem; }
+.project-video {
+  width: 100%;
+  max-width: 960px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+  background: #000;
+}
+.demo-note {
+  margin: .9rem 0 0;
+  font-size: .9rem;
+  color: var(--white);
+  opacity: .72;
+}
+.stand-in-note { opacity: .9; }
+.honest-title {
+  color: var(--white);
+  font-size: 1.15rem;
+  margin-bottom: .8rem;
+}
+.honest-list {
+  color: var(--white);
+  opacity: .82;
+  line-height: 1.7;
+  padding-left: 1.1rem;
+  margin: 0;
+}
+.honest-list li { margin-bottom: .35rem; }

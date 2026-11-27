@@ -15,7 +15,7 @@ const ProjectDetails = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const selectedProject = projectsData[language].projects.find(p => p.id === id);
+    const selectedProject = projectsData[language].projects.find(p => p.id === id || p.slug === id);
     setProject(selectedProject || null);
 
     const timer = setTimeout(() => {
@@ -67,6 +67,15 @@ const ProjectDetails = () => {
                   </Button>
                 )}
               </div>
+              {project.demoLink && (
+                <p className="demo-note">
+                  <i className="fas fa-circle-info me-2"></i>
+                  {projectsData[language].demoNote}
+                </p>
+              )}
+              {project.standIn && project.video && (
+                <p className="demo-note stand-in-note">{projectsData[language].standInNote}</p>
+              )}
             </Col>
             <Col lg={6} className="hero-image animate-on-scroll">
               <div className="image-container">
@@ -82,6 +91,41 @@ const ProjectDetails = () => {
 
       <section className="project-content">
         <Container>
+          {project.video && (
+            <Row className="project-video-row mb-4">
+              <Col lg={12}>
+                <h2 className="section-title animate-on-scroll">
+                  {projectsData[language].videoTitle}
+                </h2>
+                <video
+                  className="project-video animate-on-scroll"
+                  src={project.video}
+                  poster={project.images && project.images[0]}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
+              </Col>
+            </Row>
+          )}
+
+          {project.honest && project.honest.length > 0 && (
+            <Row className="project-honest mb-5">
+              <Col lg={12}>
+                <h3 className="honest-title animate-on-scroll">
+                  {projectsData[language].honestTitle}
+                </h3>
+                <ul className="honest-list animate-on-scroll">
+                  {project.honest.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
+              </Col>
+            </Row>
+          )}
+
           {/* Gallery */}
           <Row className="project-gallery mb-5">
             <Col lg={12}>

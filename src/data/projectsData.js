@@ -29,6 +29,10 @@ const projectsData = {
     featuresTitle: 'Key Features:',
     impactTitle  : 'Impact:',
     techTitle    : 'Technologies:',
+    videoTitle   : 'Watch it run',
+    honestTitle  : 'Honest notes:',
+    demoNote     : 'Free hosting · first load may take ~30s',
+    standInNote  : 'If the demo is down, the video above shows the same flow.',
     projects: [
       {
         id          : "diggipacks-support",
@@ -47,6 +51,9 @@ const projectsData = {
         demoLink : "https://dental-clinic-demo-ten.vercel.app/",
         codeLink : "https://github.com/osama-kamal/dental-clinic-management/tree/web-demo",
         images   : [dental1, dental2, dental3],
+        slug     : "dental-clinic",
+        video    : "/videos/dental-demo.mp4",
+        honest   : ["The live version is a browser demo: the data is made up and saved only in your browser.", "The real product is an Electron desktop app with a local SQLite database and daily backups.", "English interface only, and patients cannot book online; staff book every appointment."],
       },
       {
         id          : "law360d-legal",
@@ -65,6 +72,10 @@ const projectsData = {
         demoLink : "https://ecommerce-backend-production-5474.up.railway.app/s/demo-store",
         codeLink : "https://github.com/osama-kamal/E-Commerce-",
         images   : [ecom1, ecom2, ecom3],
+        slug     : "vendbase",
+        video    : "/videos/vendbase-demo.mp4",
+        standIn  : true,
+        honest   : ["Demo mode: online payments are off, so checkout is Cash on Delivery only.", "The demo store has no shipping zones configured, so checkout warns about delivery but still accepts the order.", "The vendor dashboard has no public demo login, so the video shows the storefront and order flow."],
       },
       {
         id          : "muzdakhar-realestate",
@@ -83,6 +94,9 @@ const projectsData = {
         demoLink : "https://pharmacy-management-system-xi-ochre.vercel.app",
         codeLink : "https://github.com/osama-kamal/pharmacy-management-system",
         images   : [pharmacy1, pharmacy2, pharmacy3],
+        slug     : "pharmacare",
+        video    : "/videos/pharmacare-demo.mp4",
+        honest   : ["Each visitor gets a private copy of the demo data, deleted after about 24 hours.", "Payments in the demo are simulated; no money moves.", "Arabic and English, on desktop and mobile."],
       },
     ],
   },
@@ -96,6 +110,10 @@ const projectsData = {
     featuresTitle: 'الميزات الرئيسية:',
     impactTitle  : 'الأثر:',
     techTitle    : 'التقنيات:',
+    videoTitle   : 'شوفه شغال',
+    honestTitle  : 'ملاحظات بصراحة:',
+    demoNote     : 'استضافة مجانية · أول تحميل ممكن ياخد ~30 ثانية',
+    standInNote  : 'لو الديمو وقع، الفيديو فوق بيوضح نفس الرحلة.',
     projects: [
       {
         id          : "diggipacks-support",
@@ -114,6 +132,9 @@ const projectsData = {
         demoLink : "https://dental-clinic-demo-ten.vercel.app/",
         codeLink : "https://github.com/osama-kamal/dental-clinic-management/tree/web-demo",
         images   : [dental1, dental2, dental3],
+        slug     : "dental-clinic",
+        video    : "/videos/dental-demo.mp4",
+        honest   : ["النسخة الحية ديمو في المتصفح: البيانات وهمية وبتتحفظ في متصفحك بس.", "المنتج الحقيقي تطبيق ديسكتوب Electron بقاعدة بيانات SQLite محلية ونسخ احتياطي يومي.", "الواجهة إنجليزي بس، والمريض ما يقدرش يحجز أونلاين؛ الموظفين هما اللي بيحجزوا."],
       },
       {
         id          : "law360d-legal",
@@ -132,6 +153,10 @@ const projectsData = {
         demoLink : "https://ecommerce-backend-production-5474.up.railway.app/s/demo-store",
         codeLink : "https://github.com/osama-kamal/E-Commerce-",
         images   : [ecom1, ecom2, ecom3],
+        slug     : "vendbase",
+        video    : "/videos/vendbase-demo.mp4",
+        standIn  : true,
+        honest   : ["وضع الديمو: الدفع الأونلاين مقفول، فالشيك أوت Cash on Delivery بس.", "المتجر التجريبي مالوش shipping zones، فالشيك أوت بيحذّر من التوصيل ومع ذلك بيقبل الأوردر.", "لوحة تحكم التاجر مالهاش تسجيل دخول عام، فالفيديو بيوضح المتجر ورحلة الأوردر."],
       },
       {
         id          : "muzdakhar-realestate",
@@ -150,6 +175,9 @@ const projectsData = {
         demoLink : "https://pharmacy-management-system-xi-ochre.vercel.app",
         codeLink : "https://github.com/osama-kamal/pharmacy-management-system",
         images   : [pharmacy1, pharmacy2, pharmacy3],
+        slug     : "pharmacare",
+        video    : "/videos/pharmacare-demo.mp4",
+        honest   : ["كل زائر بياخد نسخة خاصة من بيانات الديمو، بتتمسح بعد حوالي 24 ساعة.", "الدفع في الديمو محاكاة، مفيش أي مبلغ بيتحرك.", "عربي وإنجليزي، على الكمبيوتر والموبايل."],
       },
     ],
   },
