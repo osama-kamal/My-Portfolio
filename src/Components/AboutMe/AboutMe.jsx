@@ -56,6 +56,7 @@ const AboutMe = () => {
       certs: [
         {
           name: "Web Development using React — Information Technology Institute (ITI) • 2026",
+          link: "https://www.linkedin.com/posts/osama-hamroush_iti-creativa-reactjs-share-7516129118128660481-WuqQ/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7516129119651299328&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEmT30kBOEdKh2gFtnajZgc5gIKwl6pCbTU",
         },
         {
           name: "Backend Web Development (Node.js) — Maharah Tech • 2025",
@@ -91,6 +92,7 @@ const AboutMe = () => {
       certs: [
         {
           name: "Web Development using React — Information Technology Institute (ITI) • 2026",
+          link: "https://www.linkedin.com/posts/osama-hamroush_iti-creativa-reactjs-share-7516129118128660481-WuqQ/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7516129119651299328&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEmT30kBOEdKh2gFtnajZgc5gIKwl6pCbTU",
         },
         {
           name: "Backend Web Development (Node.js) — Maharah Tech • 2025",
