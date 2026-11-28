@@ -31,7 +31,7 @@ const projectsData = {
     techTitle    : 'Technologies:',
     videoTitle   : 'Watch it run',
     honestTitle  : 'Honest notes:',
-    demoNote     : 'Free hosting · first load may take ~30s',
+    demoNote     : 'Free hosting · the first visit after a quiet period may take a moment to start',
     standInNote  : 'If the demo is down, the video above shows the same flow.',
     projects: [
       {
@@ -67,7 +67,7 @@ const projectsData = {
         fullDescription: "Vendbase serves many vendors from one codebase. A store is resolved on every request from the hostname or the /s/:slug path, every query is scoped to that store, and cross-tenant access is blocked by a JWT guard and covered by an isolation test suite. Vendors sign up through onboarding that creates the store and owner account together. Checkout totals (subtotal, discount, shipping, tax) are computed in one place on the server, and refunds are prorated by a matching engine. Vendors are billed on subscription plans, and a platform super-admin can manage tenants.",
         shortDescription: "Multi-tenant e-commerce SaaS: isolated storefronts, server-side pricing, refunds and subscription plans.",
         features: ["Isolated storefront per vendor, resolved by hostname or store path.", "Product catalogue with categories, sizes, discounts, search and filters.", "Cart and checkout with server-side pricing, shipping zones, tax and coupons.", "Order pipeline, refunds and two payment gateways.", "Vendor subscription plans (free, starter, pro, enterprise) with limits enforced on the server.", "Platform super-admin for managing tenants."],
-        impact: ["Backend tests: 526 of 536 pass. The 10 failures are known and listed in the README (outdated email-test mocks and a test setup problem).", "Frontend tests: 115 passing. There is no end-to-end test of the full checkout flow yet.", "The live demo is a public sample store with sample data. Orders are not real, online payments are turned off, and Cash on Delivery is the only option.", "The demo runs on Vercel's free Hobby plan with a free MongoDB Atlas cluster, so the first visit after it has been idle can take a couple of seconds.", "Still in development."],
+        impact: ["Backend tests: 526 of 536 pass. The 10 failures are known and listed in the README (outdated email-test mocks and a test setup problem).", "Frontend tests: 115 passing. There is no end-to-end test of the full checkout flow yet.", "The live demo is a public sample store with sample data. Orders are not real, online payments are turned off, and Cash on Delivery is the only option.", "The demo runs on Vercel's free Hobby plan with a free MongoDB Atlas cluster, so the first visit after a quiet period can take a moment to wake up.", "Still in development."],
         tech     : ["React 18", "TypeScript", "Vite", "Tailwind", "React Query", "Node.js", "Express", "MongoDB", "JWT", "Stripe", "Docker"],
         demoLink : "https://vendbase-demo.vercel.app/s/demo-store",
         codeLink : "https://github.com/osama-kamal/E-Commerce-",
@@ -75,7 +75,7 @@ const projectsData = {
         slug     : "vendbase",
         video    : "/videos/vendbase-demo.mp4",
         standIn  : true,
-        honest   : ["Demo mode: online payments are off, so checkout is Cash on Delivery only.", "The demo store has no shipping zones configured, so checkout warns about delivery but still accepts the order.", "The vendor dashboard has no public demo login, so the video shows the storefront and order flow."],
+        honest   : ["Demo mode: online payments are off, so checkout is Cash on Delivery only.", "The demo store has no shipping zones configured, so checkout warns about delivery but still accepts the order.", "There is no shared login for the demo store's dashboard. The 'Try the admin dashboard' button in the demo banner gives every visitor a private copy of the store to explore, deleted after about 24 hours."],
       },
       {
         id          : "muzdakhar-realestate",
@@ -112,7 +112,7 @@ const projectsData = {
     techTitle    : 'التقنيات:',
     videoTitle   : 'شوفه شغال',
     honestTitle  : 'ملاحظات بصراحة:',
-    demoNote     : 'استضافة مجانية · أول تحميل ممكن ياخد ~30 ثانية',
+    demoNote     : 'استضافة مجانية · أول زيارة بعد فترة خمول ممكن تاخد لحظة عشان تبدأ',
     standInNote  : 'لو الديمو وقع، الفيديو فوق بيوضح نفس الرحلة.',
     projects: [
       {
@@ -148,7 +148,7 @@ const projectsData = {
         fullDescription: "Vendbase بتخدم تجار كتير من كود واحد. المتجر بيتحدد في كل طلب من اسم النطاق أو المسار /s/:slug، وكل استعلام مقيد بالمتجر، والدخول بين المستأجرين ممنوع بحارس JWT ومغطى بمجموعة اختبارات عزل. التاجر بيسجل من خلال onboarding بينشئ المتجر وحساب المالك مع بعض. إجماليات الدفع (المجموع الفرعي والخصم والشحن والضريبة) بتتحسب في مكان واحد على السيرفر، والاسترداد بيتوزع بمحرك مطابق. التجار بيشتركوا في باقات، ومدير المنصة يقدر يدير المستأجرين.",
         shortDescription: "SaaS تجارة إلكترونية متعدد المستأجرين: متاجر معزولة وتسعير على السيرفر واسترداد وباقات اشتراك.",
         features: ["متجر معزول لكل تاجر، بيتحدد من النطاق أو مسار المتجر.", "كتالوج منتجات بتصنيفات ومقاسات وخصومات وبحث وفلاتر.", "سلة ودفع بتسعير على السيرفر ومناطق شحن وضرائب وكوبونات.", "خط سير الطلبات والاسترداد وبوابتين دفع.", "باقات اشتراك للتجار (free وstarter وpro وenterprise) بحدود بتتطبق على السيرفر.", "مدير منصة لإدارة المستأجرين."],
-        impact: ["اختبارات الباك إند: 526 من 536 ناجحة. الـ10 الفاشلين معروفين ومكتوبين في الـREADME (mocks إيميل قديمة ومشكلة إعداد اختبار).", "اختبارات الفرونت إند: 115 ناجح. لسه مفيش اختبار end-to-end لمسار الدفع كامل.", "الديمو المباشر متجر تجريبي عام ببيانات تجريبية. الطلبات مش حقيقية، والدفع الإلكتروني مقفول، والدفع عند الاستلام هو الخيار الوحيد.", "الديمو على خطة Vercel المجانية مع قاعدة بيانات MongoDB Atlas مجانية، فأول زيارة بعد فترة خمول ممكن تاخد ثواني.", "لسه قيد التطوير."],
+        impact: ["اختبارات الباك إند: 526 من 536 ناجحة. الـ10 الفاشلين معروفين ومكتوبين في الـREADME (mocks إيميل قديمة ومشكلة إعداد اختبار).", "اختبارات الفرونت إند: 115 ناجح. لسه مفيش اختبار end-to-end لمسار الدفع كامل.", "الديمو المباشر متجر تجريبي عام ببيانات تجريبية. الطلبات مش حقيقية، والدفع الإلكتروني مقفول، والدفع عند الاستلام هو الخيار الوحيد.", "الديمو على خطة Vercel المجانية مع قاعدة بيانات MongoDB Atlas مجانية، فأول زيارة بعد فترة خمول ممكن تاخد لحظة لحد ما يصحى.", "لسه قيد التطوير."],
         tech     : ["React 18", "TypeScript", "Vite", "Tailwind", "React Query", "Node.js", "Express", "MongoDB", "JWT", "Stripe", "Docker"],
         demoLink : "https://vendbase-demo.vercel.app/s/demo-store",
         codeLink : "https://github.com/osama-kamal/E-Commerce-",
@@ -156,7 +156,7 @@ const projectsData = {
         slug     : "vendbase",
         video    : "/videos/vendbase-demo.mp4",
         standIn  : true,
-        honest   : ["وضع الديمو: الدفع الأونلاين مقفول، فالشيك أوت Cash on Delivery بس.", "المتجر التجريبي مالوش shipping zones، فالشيك أوت بيحذّر من التوصيل ومع ذلك بيقبل الأوردر.", "لوحة تحكم التاجر مالهاش تسجيل دخول عام، فالفيديو بيوضح المتجر ورحلة الأوردر."],
+        honest   : ["وضع الديمو: الدفع الأونلاين مقفول، فالشيك أوت Cash on Delivery بس.", "المتجر التجريبي مالوش shipping zones، فالشيك أوت بيحذّر من التوصيل ومع ذلك بيقبل الأوردر.", "مفيش تسجيل دخول مشترك للوحة تحكم المتجر التجريبي. زرار 'Try the admin dashboard' في شريط الديمو بيدي كل زائر نسخة خاصة من المتجر يجرب بيها، وبتتمسح بعد حوالي 24 ساعة."],
       },
       {
         id          : "muzdakhar-realestate",
