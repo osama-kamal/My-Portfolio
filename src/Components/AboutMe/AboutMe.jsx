@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone, FaCertificate } from "react-icons/fa";
 import "./AboutMe.css";
 import { useMode } from "../../Utils/Context/ModeContext";
 import { useLanguage } from "../../Utils/Context/LanguageContext";
@@ -55,11 +55,14 @@ const AboutMe = () => {
       certifications: "Certifications",
       certs: [
         {
-          name: "Node.js RESTful Web Services",
+          name: "Web Development using React — Information Technology Institute (ITI) • 2026",
+        },
+        {
+          name: "Backend Web Development (Node.js) — Maharah Tech • 2025",
           link: "https://www.linkedin.com/posts/osama-hamroush_nodejs-restful-web-services-using-express-activity-7390300441047289857-Cq8V?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEmT30kBOEdKh2gFtnajZgc5gIKwl6pCbTU&utm_campaign=copy_link",
         },
         {
-          name: "Frontend Development Activity",
+          name: "Frontend Development — Digital Egypt Pioneers Initiative (DEPI) • 2024",
           link: "https://www.linkedin.com/posts/osama-hamroush_digitalegypt-frontenddevelopment-softwaredevelopment-activity-7290795803021877248-1GCK?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAEmT30kBOEdKh2gFtnajZgc5gIKwl6pCbTU&utm_campaign=copy_link",
         },
       ],
@@ -87,11 +90,14 @@ const AboutMe = () => {
       certifications: "الشهادات",
       certs: [
         {
-          name: "Node.js RESTful Web Services",
+          name: "Web Development using React — Information Technology Institute (ITI) • 2026",
+        },
+        {
+          name: "Backend Web Development (Node.js) — Maharah Tech • 2025",
           link: "https://www.linkedin.com/posts/osama-hamroush_nodejs-restful-web-services-using-express-activity-7390300441047289857-Cq8V?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEmT30kBOEdKh2gFtnajZgc5gIKwl6pCbTU&utm_campaign=copy_link",
         },
         {
-          name: "Frontend Development Activity",
+          name: "Frontend Development — Digital Egypt Pioneers Initiative (DEPI) • 2024",
           link: "https://www.linkedin.com/posts/osama-hamroush_digitalegypt-frontenddevelopment-softwaredevelopment-activity-7290795803021877248-1GCK?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAEmT30kBOEdKh2gFtnajZgc5gIKwl6pCbTU&utm_campaign=copy_link",
         },
       ],
@@ -201,15 +207,22 @@ const AboutMe = () => {
                   <ul className="list-unstyled mb-0">
                     {data.certs.map((cert, i) => (
                       <li key={i} className="mb-2">
-                        <a
-                          href={cert.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="cert-link d-flex align-items-center gap-2"
-                        >
-                          <FaLinkedin size={14} className="text-primary flex-shrink-0" />
-                          <span>{cert.name}</span>
-                        </a>
+                        {cert.link ? (
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="cert-link d-flex align-items-center gap-2"
+                          >
+                            <FaLinkedin size={14} className="text-primary flex-shrink-0" />
+                            <span>{cert.name}</span>
+                          </a>
+                        ) : (
+                          <span className="cert-link d-flex align-items-center gap-2">
+                            <FaCertificate size={14} className="text-primary flex-shrink-0" />
+                            <span>{cert.name}</span>
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
